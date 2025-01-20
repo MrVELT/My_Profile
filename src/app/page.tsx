@@ -38,7 +38,7 @@ export default function Home() {
           </button>
         </motion.div>
       </div>
-      <div className="flex flex-col items-center justify-center py-20 gap-10 dark:bg-gray-800">
+      <div className="flex flex-col items-center justify-center py-20 px-10 gap-10 dark:bg-gray-800">
         <h1 className="text-3xl font-bold dark:text-gray-100">
           Kỹ năng chuyên môn
         </h1>
