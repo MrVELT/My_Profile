@@ -91,7 +91,7 @@ export default function Home() {
           {data.project.map((data: any, index: any) => (
             <div
               key={data.id}
-              className="bg-white rounded-lg p-5 pb-10 gap-5 flex flex-grow-1 flex-col relative"
+              className="bg-white rounded-lg p-5 gap-5 flex flex-grow-1 flex-col"
             >
               <div className="flex justify-between items-center">
                 <h1 className="font-bold text-xl text-nowrap lg:text-2xl text-black">
@@ -111,7 +111,7 @@ export default function Home() {
                   </ul>
                 ))}
               </div>
-              <div className="absolute bottom-2 left-0 w-full grid grid-cols-2 xl:flex items-center gap-3 px-5">
+              <div className="grid grid-cols-2 xl:flex items-end h-full gap-3 px-2">
                 {data.technology.map((item: any, index: any) => (
                   <span
                     key={index}
