@@ -1,0 +1,39 @@
+{
+  "project": [
+    {
+      "id": 1,
+      "title": "Quản lý thư viện",
+      "description": "Hệ thống quản lý thư viện hiện đại giúp quản lý sách, độc giả, số hóa sách và các hoạt động mượn trả một cách hiệu quả",
+      "functionName": [
+        "Quản lý sách",
+        "Quản lý độc giả",
+        "Mượn trả sách",
+        "Thống kê báo cáo",
+        "Số hóa sách",
+        "Quản lý nhân viên"
+      ],
+      "technology": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "ASP.NET Core",
+        "Git"
+      ],
+      "githubLink": "https://github.com/yourusername/library-management"
+    },
+    {
+      "id": 2,
+      "title": "Sổ tay điện tử",
+      "description": "Hệ thống quản lý và cảnh báo cho người nông dân",
+      "functionName": [
+        "Quản lý các thửa trồng trọt",
+        "Quản lý các khu gia cầm",
+        "Tưới nước theo lịch hẹn",
+        "Cho ăn theo lịch hẹn",
+        "Quản lý nhân viên"
+      ],
+      "technology": ["Next.js", "TypeScript", "Tailwind CSS", "Git"],
+      "githubLink": "https://github.com/yourusername/library-management"
+    }
+  ]
+}
