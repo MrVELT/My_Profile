@@ -7,49 +7,57 @@ import { motion } from 'motion/react';
 import { FaGithub, FaReact } from 'react-icons/fa';
 import { IoCodeSlashOutline, IoLibrary } from 'react-icons/io5';
 import data from '../../public/data.json';
+import BlurText from '@/styles/reactbits/blurtext';
+import ShinyText from '@/styles/reactbits/shinytext';
 
 export default function Home() {
   return (
     <div className="overflow-x-hidden">
       <div className="flex items-center justify-center py-20 bg-blue-600 dark:bg-gradient-to-r dark:from-purple-800 dark:via-indigo-700 dark:to-teal-600">
-        <motion.div
-          className="flex flex-col gap-5 items-center"
-          initial={{ y: -100, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          //viewport={{ once: true, amount: 0.3 }}
-          transition={{
-            duration: 0.8,
-            ease: 'easeOut',
-          }}
-        >
+        <div className="flex flex-col gap-5 items-center">
           <Avatar size={150} icon={<FontAwesomeIcon icon={faUserTie} />} />
-          <h1 className="font-bold text-3xl md:text-5xl text-white dark:text-gray-100">
-            Nguyễn Minh Đức
-          </h1>
-          <p className="font-bold text-2xl text-white dark:text-gray-300">
-            Frontend Developer
-          </p>
-          <p className="text-xl text-white dark:text-gray-400">
-            Chuyên gia Next.js
-          </p>
+          <BlurText
+            text="Nguyễn Minh Đức"
+            delay={150}
+            animateBy="words"
+            direction="top"
+            className="font-bold text-3xl md:text-5xl text-white dark:text-gray-100"
+          />
+          <BlurText
+            text="Frontend Developer"
+            delay={150}
+            animateBy="words"
+            direction="top"
+            className="font-bold text-2xl text-white dark:text-gray-300"
+          />
+          <BlurText
+            text="Chuyên gia Next.js"
+            delay={150}
+            animateBy="words"
+            direction="top"
+            className="text-xl text-white dark:text-gray-400"
+          />
           <button className="flex items-center justify-center px-5 py-2 gap-2 rounded-2xl bg-white text-blue-500 dark:text-gray-100 dark:bg-gray-700 hover:bg-gray-100">
             <FontAwesomeIcon icon={faGithub} />
             <p>Github</p>
           </button>
-        </motion.div>
+        </div>
       </div>
       <div className="flex flex-col items-center justify-center py-20 px-10 gap-10 dark:bg-gray-800">
-        <h1 className="text-3xl font-bold dark:text-gray-100">
-          Kỹ năng chuyên môn
-        </h1>
+        <ShinyText
+          text="Kỹ năng chuyên môn"
+          disabled={false}
+          speed={3}
+          className="text-3xl font-bold"
+        />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <motion.div
             className="grid p-5 gap-3 rounded-lg bg-gray-50 dark:bg-gray-700"
-            initial={{ x: -100, opacity: 0 }}
+            initial={{ x: -100, opacity: -10 }}
             whileInView={{ x: 0, opacity: 1 }}
             //viewport={{ once: true, amount: 0.3 }}
             transition={{
-              duration: 0.8,
+              duration: 1.5,
               ease: 'easeOut',
             }}
           >
@@ -63,11 +71,11 @@ export default function Home() {
           </motion.div>
           <motion.div
             className="grid p-5 gap-3 rounded-lg bg-gray-50 dark:bg-gray-700"
-            initial={{ y: 100, opacity: 0 }}
+            initial={{ y: 100, opacity: -10 }}
             whileInView={{ y: 0, opacity: 1 }}
             //viewport={{ once: true, amount: 0.3 }}
             transition={{
-              duration: 0.8,
+              duration: 1.5,
               ease: 'easeOut',
             }}
           >
@@ -81,11 +89,11 @@ export default function Home() {
           </motion.div>
           <motion.div
             className="grid p-5 gap-3 rounded-lg bg-gray-50 dark:bg-gray-700"
-            initial={{ x: 100, opacity: 0 }}
+            initial={{ x: 100, opacity: -10 }}
             whileInView={{ x: 0, opacity: 1 }}
             //viewport={{ once: true, amount: 0.3 }}
             transition={{
-              duration: 0.8,
+              duration: 1.5,
               ease: 'easeOut',
             }}
           >
@@ -100,9 +108,12 @@ export default function Home() {
         </div>
       </div>
       <div className="py-20 gap-10 flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-900">
-        <h1 className="text-3xl font-bold text-black dark:text-white">
-          Dự án tiêu biểu
-        </h1>
+        <ShinyText
+          text="Dự án tiêu biểu"
+          disabled={false}
+          speed={3}
+          className="text-3xl font-bold"
+        />
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 md:px-28">
           {data.project.map((data: any, index: any) => (
             <div
@@ -150,7 +161,12 @@ export default function Home() {
       </div>
       <div>
         <div className="py-20 flex flex-col items-center gap-10">
-          <h1 className="text-3xl font-bold">Thông tin liên hệ</h1>
+          <ShinyText
+            text="Thông tin liên hệ"
+            disabled={false}
+            speed={3}
+            className="text-3xl font-bold"
+          />
           <ul className="grid list-inside list-disc gap-3">
             <li>Email: nguyenminhduc7899@gmail.com</li>
             <li>Số điện thoại: 0834070899</li>
