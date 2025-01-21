@@ -3,6 +3,7 @@
 import { Switch } from 'antd';
 import { useTheme } from 'next-themes';
 import React, { useState, useEffect } from 'react';
+import { FaRegLightbulb } from 'react-icons/fa';
 
 export default function DarkMode() {
   const { setTheme, resolvedTheme } = useTheme();
@@ -20,19 +21,27 @@ export default function DarkMode() {
     }
   }, [resolvedTheme, setTheme]);
 
-  const toggleTheme = (checked: boolean) => {
-    const newTheme = checked ? 'dark' : 'light';
-    setIsDarkMode(checked);
+  const toggleTheme = () => {
+    const newTheme = !isDarkMode ? 'dark' : 'light';
+    setIsDarkMode(!isDarkMode);
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme); // Lưu trạng thái vào localStorage
   };
 
   return (
-    <Switch
-      checked={isDarkMode} // Cập nhật giá trị Switch theo trạng thái isDarkMode
-      checkedChildren="Dark"
-      unCheckedChildren="Light"
-      onChange={toggleTheme} // Gọi hàm toggleTheme khi chuyển trạng thái
-    />
+    <>
+      <Switch
+        checked={isDarkMode}
+        checkedChildren="Dark"
+        unCheckedChildren="Light"
+        onChange={toggleTheme}
+        className="hidden xl:block"
+      />
+      <FaRegLightbulb
+        className={`xl:hidden ${isDarkMode ? '' : 'text-yellow-500'}`}
+        size={30}
+        onClick={toggleTheme}
+      />
+    </>
   );
 }
