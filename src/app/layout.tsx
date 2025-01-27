@@ -18,7 +18,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Profile-Minh Duc Nguyen',
+  title: 'Profile-MrVELT',
   description: 'Profile',
 };
 
