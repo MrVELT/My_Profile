@@ -14,7 +14,7 @@ export function middleware(request: NextRequest) {
   }
 
   // Danh sách các đường dẫn hợp lệ
-  const validPaths = ['/']; // Thay thế bằng các đường dẫn trong ứng dụng của bạn
+  const validPaths = ['/', '/services', '/resume', '/work', '/contact']; // Thay thế bằng các đường dẫn trong ứng dụng của bạn
 
   // Chuyển hướng tới trang 404 nếu đường dẫn không hợp lệ
   if (!validPaths.includes(pathname)) {

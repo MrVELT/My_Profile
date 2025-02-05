@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import { JetBrains_Mono } from 'next/font/google';
 import './globals.css';
+
+//Components
 import Header from '@/components/header';
-import Footer from '@/components/footer';
-import { Providers } from '@/components/providers';
-import ScrollToTopButton from '@/components/scrollbutton';
+import PageTransition from '@/components/pageTransition';
+import StairTransition from '@/components/stairTransition';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -17,8 +19,14 @@ const geistMono = localFont({
   weight: '100 900',
 });
 
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
+  variable: '--font-jetbrainsMono',
+});
+
 export const metadata: Metadata = {
-  title: 'Profile-MrVELT',
+  title: 'Profile',
   description: 'Profile',
 };
 
@@ -33,14 +41,11 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${jetbrainsMono.variable} antialiased`}
       >
-        <Providers>
-          <Header />
-          <ScrollToTopButton />
-          {children}
-          <Footer />
-        </Providers>
+        <Header />
+        <StairTransition />
+        <PageTransition>{children}</PageTransition>
       </body>
     </html>
   );

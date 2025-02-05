@@ -1,5 +1,6 @@
-import PageClient from './profile/page.client';
+//Components
+import HomePage from './home/page';
 
 export default function Home() {
-  return <PageClient />;
+  return <HomePage />;
 }
